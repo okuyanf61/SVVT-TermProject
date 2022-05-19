@@ -16,6 +16,7 @@ flake8 = "^4.0.1"
 bandit = "^1.7.4"
 safety = "^1.10.3"
 mypy = "^0.950"
+wemake-python-styleguide = "^0.16.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
