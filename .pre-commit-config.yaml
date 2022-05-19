@@ -1,0 +1,62 @@
+---
+
+repos:
+  - repo: local
+    hooks:
+      - id: pyupgrade
+        name: Pyupgrade
+        description: "A tool to automatically upgrade syntax for newer
+        versions of the language."
+        entry: find . -name '*.py' -type f -exec poetry run pyupgrade --py310-plus {} +
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: black
+        name: Black
+        description: Uncompromising Python code formatter
+        entry: poetry run black .
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: isort
+        name: isort
+        description: A Python utility that sorts imports alphabetically
+        entry: poetry run isort .
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: flake8
+        name: Flake8
+        description: Python Style Guide Enforcement
+        entry: poetry run flake8 .
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: bandit
+        name: bandit
+        description: Bandit is a tool designed to find common security issues.
+        entry: poetry run bandit -lll --recursive .
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: safety
+        name: safety
+        description: Checks dependencies for known security vulnerabilities.
+        entry: poetry run safety check --full-report --ignore=42194
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: mypy
+        name: Mypy
+        description: Optional static typing for Python
+        entry: poetry run mypy .
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: pytest
+        name: Pytest
+        description: Pytest
+        entry: poetry run pytest
+        language: system
+        types: [python]
+        pass_filenames: false
