@@ -7,7 +7,7 @@ repos:
         name: Pyupgrade
         description: "A tool to automatically upgrade syntax for newer
         versions of the language."
-        entry: find . -name '*.py' -type f -exec poetry run pyupgrade --py310-plus {} +
+        entry: poetry run pyupgrade --py39-plus
         language: system
         types: [python]
         pass_filenames: false
@@ -50,13 +50,6 @@ repos:
         name: Mypy
         description: Optional static typing for Python
         entry: poetry run mypy .
-        language: system
-        types: [python]
-        pass_filenames: false
-      - id: pytest
-        name: Pytest
-        description: Pytest
-        entry: poetry run pytest
         language: system
         types: [python]
         pass_filenames: false
